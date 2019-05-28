@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>jQuery Ninja To Cat</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		
+		<style>
+			* {
+				margin: 5px 20px;
+			}
+			.ninja img{
+				display: block;
+			}
+
+
+		</style>
+	</head>
+	<body>
+		<h1>jQuery Ninja To Cat</h1>
+
+		<div class="ninja">
+			<img src="ninja0.png" alt="ninja" data-alt-src="cat0.png"/>			
+			<img src="ninja1.png" alt="ninja" data-alt-src="cat1.png"/>		
+			<img src="ninja2.png" alt="ninja" data-alt-src="cat2.png"/>
+			<img src="ninja3.png" alt="ninja" data-alt-src="cat3.png"/>
+			<img src="ninja4.png" alt="ninja" data-alt-src="cat4.png"/>
+		</div>
+		
+		
+		<script>
+			$(document).ready(function(){
+				$('img').click(function() {
+				  <!-- console.log('data-alt-src value is', $(this).attr('data-alt-src')); -->
+				  var tmp=$(this).attr('src');
+				  $(this).attr('src', $(this).attr('data-alt-src'));
+				  $(this).attr('data-alt-src', tmp)
+				});
+			} );
+		</script>
+		
+		
+	</body>
+</html>
